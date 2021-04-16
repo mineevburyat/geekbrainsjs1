@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    "use strict";
+    /**
+     * Сумма двух значений
+     * @param {number} a - первый параметр
+     * @param {number} b - второй параметр
+     * @return {number} результат сумма двух параметров
+     */
+    function sum(a, b) {
+      return a + b;
+    }
+    /**
+     * Разница двух значений
+     * @param {number} a - первый параметр
+     * @param {number} b - второй параметр
+     * @return {number} результат разница двух параметров
+     */
+     function sub(a, b) {
+      return a - b;
+    }
+
+     /**
+     * Произведение двух значений
+     * @param {number} a - первый параметр
+     * @param {number} b - второй параметр
+     * @return {number} результат произведение двух параметров
+     */
+     function mul(a, b) {
+      return a * b;
+    }
+
+     /**
+     * Частное двух значений
+     * @param {number} a - первый параметр
+     * @param {number} b - второй параметр
+     * @return {number} результат частное двух параметров
+     */
+     function div(a, b) {
+      return a / b;
+    }
+
+    /**
+     * Операция над двумя значениями
+     * @param {number} arg1 - первый параметр
+     * @param {number} arg2 - второй параметр
+     * @param {string} operation - название операции
+     * @returns {number} результат математической операции
+     */
+    function mathOperation(arg1, arg2, operation) {
+      switch (operation) {
+        case "sum": 
+          return sum(arg1, arg2);
+          
+        case "sub":
+          return sub(arg1, arg2);
+          
+        case "mul":
+          return mul(arg1, arg2);
+          
+        case "div":
+          return div(arg1, arg2);
+          
+        default:
+          throw new Error("unknown operation!");
+      }
+    }
+    console.log(mathOperation(2, 3, "sum"))
+    console.log(mathOperation(2, 3, "sub"))
+    console.log(mathOperation(2, 3, "mul"))
+    console.log(mathOperation(2, 2, "div"))
+    console.log(mathOperation(2, 2, "dpv"))
+  </script>
+</body>
+</html>

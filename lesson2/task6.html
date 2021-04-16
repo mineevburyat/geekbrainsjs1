@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    "use strict";
+    const askPrompt = "ВВедите количество монет, которые хотите положить на счет:";
+    
+    /**
+     * Функция запоса числа
+     * @param {string} askStr - строка для пояснения
+     * @returns {number}
+     */
+    function askCoins(askStr) {
+      let result = parseInt(prompt(askStr));
+      if (isNaN(result)) {
+        throw new Error('Ошибка ввода!');
+      } else {
+        return result;
+      }
+    }
+    /**
+     * Возращает последний символ строки
+     * @param {string} str - произвольная строка
+     * @returns {string} - строка длинной один символ, последний символ строки
+     * */ 
+    function getLastChar(str) {
+      let lengthStr = str.length;
+      return str.charAt(lengthStr - 1);
+    }
+
+    /**
+     * Возвращает склонение слово рубль в зависимости от последней цифры
+     * @param {string} digit - строка в один символ содержащая число
+     * @return {string} - склонение слова рубль
+     * 
+     * */
+    function rublVariants(digit) {
+      switch (digit) {
+        case "1": return "рубль";
+        case "2" || "3" || "4": return "рубля";
+        default: return "рублей";
+      }
+    }
+
+    let coins = askCoins(askPrompt);
+    let strRubl = rublVariants(getLastChar(String(coins)));
+    alert(`Ваша сумма в ${coins} ${strRubl} успешно зачислена.`)
+  </script>
+</body>
+</html>

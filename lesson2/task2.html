@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    "use strict";
+    let a = 2;
+    /*
+    В первую очередь выполняется выражение в скобках: значение a удваивается результат записывается в
+    переменную a = 4.
+    Вместо скобок пишется 4 и происходит операция сложения.
+    Сделано хитро-умно я сначала посчитал что скобки ничего не возвращают (undefine),
+    лучше так не делать.
+    */
+    let x = 1 + (a = a * 2); // x=5
+  </script>
+</body>
+</html>
