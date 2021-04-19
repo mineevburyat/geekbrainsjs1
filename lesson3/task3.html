@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    "use strict";
+    const products = [
+            {id: 3, price: 200, },
+            {id: 4, price: 900, },
+            {id: 1, price: 1000, },
+            ];
+    //console.log(products);
+    /**
+     * callback для создания другого списка со скидками
+     * @param {Object} product - структура продукта с параметром price
+     * @param {Number} product.id
+     * @param {Number} product.price
+     * @returns {Object} - продукт со скидкой
+     * @returns {Number} id
+     * @returns {Number} price
+     * */
+    function discountNew(product) {
+      return {id: product.id,
+              price: product.price * (1 - 0.15)}
+    }
+    //создать другой список со скидками
+    let productsWithDiscount = products.map(discountNew);
+    console.log("productsWithDiscount")
+    for(let product of productsWithDiscount) {
+      console.log(product);
+    }
+    //применить скидки к существующему списку
+    products.forEach(function(product) {
+      product.price = product.price * (1 - 0.15)});
+    console.log("products")
+    for(let product of products) {
+      console.log(product);
+    }
+  </script>
+</body>
+</html>
