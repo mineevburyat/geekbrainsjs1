@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    "use strict";
+    // //ES5
+    // //Объект Post и методы
+    // function Post(author, text, date) {
+    //   this.author = author;
+    //   this.text = text;
+    //   this.date = date;
+    // }
+    // Post.prototype.edit = function(text) {
+    //   this.text = text;
+    // }
+    // //Объект AttachedPost который наследуется от объекта Post
+    // function AttachedPost(author, text, date, highlighted = false) {
+    //   Post.call(this, author, text, date);
+    //   this.highlighted = highlighted;
+    // }
+    // AttachedPost.prototype = Object.create(Post.prototype);
+    // AttachedPost.prototype.constructor = AttachedPost;
+    // AttachedPost.prototype.makeTextHighlighted = function() {
+    //   this.highlighted = true;
+    // }
+
+    //ES6
+    class Post {
+      constructor (author, text, date) {
+        this.author = author;
+        this.text = text;
+        this.date = date;
+      }
+      edit(text) {
+        this.text = text;
+      }
+    }
+
+    class AttachedPost extends Post {
+      constructor (author, text, date, highlighted = false) {
+        super (author, text, date);
+        this.highlighted = highlighted;
+      }
+      makeTextHighlighted() {
+        this.highlighted = true;
+      }
+
+    }
+
+    const post1 = new Post('alex', 'Lorem ipsum 1', '26.04.2021');
+    const post2 = new Post('sasha', '', '01.01.2000');
+    post2.edit('Hello world!');
+    const post3 = new AttachedPost('max', 'very vell', '27.05.1991');
+    post3.makeTextHighlighted();
+    post3.edit(post3.text + "hello worda!");
+  </script>
+</body>
+</html>

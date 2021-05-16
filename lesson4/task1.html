@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    "use strict";
+    const numberObj = {};
+    let num = parseInt(prompt("Введите целое число от 0 до 999:"));
+    if (Number.isInteger(num) && num >= 0 && num <= 999) {
+      numberObj.hundreds = parseInt(num / 100);
+      numberObj.tens = parseInt(num % 100 / 10);
+      numberObj.units = num % 100 % 10;
+    } else {
+      throw new Error("Input is not number or more then 999");
+    }
+    console.log(numberObj);
+
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex;" class="main">
+        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus nisi obcaecati nesciunt, ipsa recusandae mollitia repellat consequuntur dolores quis ea laudantium rem nobis dolor officiis aliquam modi sapiente sint est?</div>
+        <textarea></textarea>
+    </div>
+    <!-- Задание. Сделайте, чтобы при наведении на textarea в консоли
+    появлялось сообщение: "вы навели на textarea" -->
+
+    <script>
+        "use strict";
+        const obj_textArea = document.querySelector("textarea");
+        obj_textArea.addEventListener("mouseenter", () => {console.log("вы навели на textarea")});
+    </script>
+</body>
+</html>

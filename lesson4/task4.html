@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //Class describe
+    class QandAnswer {
+      constructor (question, answerlist, answer) {
+        this.question = question;
+        this.answerlist = answerlist;
+        this.answer = answer;
+      }
+
+      get ask() {
+        let text = `Выберите правильный ответ на вопрос: \n ${this.question} \n Возможные ответы: \n 1. ${this.answerlist[0]} \t 2. ${this.answerlist[1]} \n 3. ${this.answerlist[2]} \t 4. ${this.answerlist[3]}\n (для завершения игры нажмите отмена.)`;
+        return text;
+      }
+    }
+    //Init question list
+    qlist = [];
+    qlist.push(new QandAnswer('Сколько букв в слове "привет":', ["Пять", "Шесть", "Семь","Где я?"], 2));
+    qlist.push(new QandAnswer('Как дела?', ["Хорошо", "Не очень", "Семь","Где я?"], 3));
+    //logic game
+    let score = 0;
+    for (question of qlist) {
+      let answer = parseInt(prompt(question.ask));
+      if (Number.isInteger(answer) && answer >=1 && answer <=4) {
+        if (answer == question.answer) {
+          score++;
+          alert("Верно! Следующий вопрос.");
+        } else {
+          alert("Не верно! Следующий вопрос.");
+        }
+        } else {
+          break;
+        }
+      }
+    alert(`game ower! вы ответили верно ${score} раз!`);
+    
+  </script>
+</body>
+</html>

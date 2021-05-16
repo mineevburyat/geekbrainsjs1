@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    "use strict";
+    function getCommonDivisor(a, b) {
+      if (a < 2 || b < 2) return 1;
+      let divisor = 2;
+      let greatDivisor = 1;
+      while (a >= divisor && b >=divisor) {
+        if (a % divisor === 0 && b % divisor === 0) {
+          greatDivisor = divisor;
+        }
+        divisor++;
+      }
+      return greatDivisor;
+    }
+
+    console.log(getCommonDivisor(120, 30));
+  </script>
+</body>
+</html>
